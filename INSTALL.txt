@@ -1,0 +1,11 @@
+# As the iRODS server user, download the code to 'modules':
+cd $IRODSHOME/modules
+git clone git://github.com/hajaalin/modules-LMUISA.git LMUISA
+
+# Compile iRODS with the new module:
+cd $IRODSHOME
+rm server/re/include/reAction.h
+./scripts/configure --enable-LMUISA
+make reaction
+make
+
